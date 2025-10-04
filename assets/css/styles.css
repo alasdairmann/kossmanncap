@@ -1,0 +1,64 @@
+/* ============================================
+   FONT DEFINITIONS
+   ============================================ */
+/* @font-face {
+  font-family: 'KMC Mix';
+  src: url('../fonts/KMCMix-Regular.woff2') format('woff2'),
+    url('../fonts/KMCMix-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} */
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  background: linear-gradient(
+    to bottom,
+    #010409 40%,
+    #0a1011 72%,
+    #111a1d 100%
+  );
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================
+   LAYOUT COMPONENTS
+   ============================================ */
+
+/* Three.js canvas container */
+#three-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Main heading */
+img {
+  width: 100%;
+  max-width: 500px;
+  max-height: 50vh;
+  height: auto;
+  z-index: 2;
+  position: relative;
+  font-weight: 400;
+}
