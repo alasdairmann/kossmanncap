@@ -19,16 +19,20 @@
   box-sizing: border-box;
 }
 
+htm,
 body {
-  height: 100dvh;
-  width: 100dvw;
-  padding: 2rem;
   background: linear-gradient(
     to bottom,
     #010409 40%,
     #0a1011 72%,
     #111a1d 100%
   );
+}
+
+body {
+  height: 100dvh;
+  width: 100dvw;
+  padding: 2rem;
   color: white;
   display: flex;
   justify-content: center;
