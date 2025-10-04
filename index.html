@@ -1,134 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Koss Mann Capital</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://kossmanncap.com/">
-  <meta name="description" content="Koss Mann Capital">
-  <meta name="theme-color" content="#000000">
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Koss Mann Capital">
-  <meta property="og:url" content="https://kossmanncap.com/">
-  <meta property="og:title" content="Koss Mann Capital">
-  <meta property="og:description" content="Superintelligence will transform civilization more profoundly than any past or future technology, and the race to it presents the greatest capital allocation opportunity ever.">
-  <meta property="og:image" content="https://kossmanncap.com/og-image.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Koss Mann Capital">
-  <meta name="twitter:description" content="Koss Mann Capital">
-  <meta name="twitter:image" content="https://kossmanncap.com/og-image.png">
-  <style>
-    :root {
-      /* Dots are strongest near the text and fade toward edges */
-      --dot-core-radius: 18%;     /* fully-visible core around text */
-      --dot-fade-out: 14%;        /* fade width from visible to none */
-      --dot-center-x: 50%;        /* keep centered with headline */
-      --dot-center-y: 50%;
-    }
-    /* Season Mix - self-hosted */
-    @font-face {
-      font-family: 'KMC Mix';
-      src:
-        url('fonts/KMCMix-Regular.woff2') format('woff2'),
-        url('fonts/KMCMix-Regular.ttf') format('truetype');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <title>Koss Mann Capital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Koss Mann Capital" />
+    <meta name="theme-color" content="#000000" />
 
-    html, body {
-      height: 100%;
-      background: #000;
-      color: white;
-      font-family: 'KMC Mix', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
+    <!-- SEO & Canonical -->
+    <link rel="canonical" href="https://kossmanncap.com/" />
 
-    /* Mobile tweaks: make the dotted area wider and extend farther */
-    @media (max-width: 768px) {
-      :root {
-        --dot-core-radius: 34%;
-        --dot-fade-out: 26%;
-      }
-      body::before {
-        -webkit-mask-size: 160% 110%;
-        mask-size: 160% 110%;
-      }
-    }
+    <!-- Favicons -->
+    <link rel="icon" href="assets/icons/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icons/favicon-16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/apple-touch-icon.png"
+    />
 
-    /* Blue dot grid pattern */
-    body::before {
-      content: '';
-      position: fixed; /* ensure it spans the full viewport on wide screens */
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      /* small blue dots on a grid */
-      background-image: radial-gradient(circle, rgba(206, 237, 252, 0.55) 0.5px, transparent 1.6px);
-      background-size: 24px 24px;
-      opacity: 0.6;
-      z-index: 0;
-      pointer-events: none;
-      /* Dots visible near text, fading out radially toward the edges */
-      -webkit-mask-image: radial-gradient(ellipse at var(--dot-center-x) var(--dot-center-y),
-        rgba(255,255,255,1) 0%,
-        rgba(255,255,255,1) var(--dot-core-radius),
-        rgba(255,255,255,0) calc(var(--dot-core-radius) + var(--dot-fade-out)));
-      mask-image: radial-gradient(ellipse at var(--dot-center-x) var(--dot-center-y),
-        rgba(255,255,255,1) 0%,
-        rgba(255,255,255,1) var(--dot-core-radius),
-        rgba(255,255,255,0) calc(var(--dot-core-radius) + var(--dot-fade-out)));
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-size: 100% 100%;
-      mask-size: 100% 100%;
-    }
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Koss Mann Capital" />
+    <meta property="og:url" content="https://kossmanncap.com/" />
+    <meta property="og:title" content="Koss Mann Capital" />
+    <meta
+      property="og:description"
+      content="Superintelligence will transform civilization more profoundly than any past or future technology, and the race to it presents the greatest capital allocation opportunity ever."
+    />
+    <meta
+      property="og:image"
+      content="https://kossmanncap.com/assets/images/og-image.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-    /* Blue glow from bottom spanning full width */
-    body::after {
-      content: '';
-      position: fixed; /* anchor to viewport */
-      bottom: -8vh;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200vw; /* overscan so it covers ultra-wide monitors */
-      height: 50vh;
-      background: radial-gradient(ellipse at 50% 100%, rgba(0, 173, 255, 0.15) 0%, rgba(0, 173, 255, 0.10) 35%, rgba(0, 173, 255, 0.05) 60%, transparent 80%);
-      filter: blur(50px);
-      z-index: 1;
-      pointer-events: none;
-    }
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Koss Mann Capital" />
+    <meta name="twitter:description" content="Koss Mann Capital" />
+    <meta
+      name="twitter:image"
+      content="https://kossmanncap.com/assets/images/og-image.png"
+    />
 
-    h1 {
-      font-size: 2.8rem;
-      z-index: 2;
-      position: relative;
-      font-weight: 400;
-    }
+    <!-- External Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  </style>
-</head>
-<body>
-  <h1>Koss Mann Capital</h1>
-</body>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="three-container"></div>
+    <!-- <h1>Koss Mann Capital</h1> -->
+    <img
+      src="assets/images/koss-mann-capital-logo.svg"
+      alt="Koss Mann Capital"
+    />
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
