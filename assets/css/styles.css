@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 html,
@@ -29,19 +30,10 @@ body {
   );
 }
 
-/* iOS Safari status bar styling */
-html {
+html,
+body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-}
-
-body {
-  /* Ensure body extends to status bar area on iOS */
-  padding-top: max(env(safe-area-inset-top), 2rem);
-  padding-bottom: max(env(safe-area-inset-bottom), 2rem);
-  padding-left: max(env(safe-area-inset-left), 2rem);
-  padding-right: max(env(safe-area-inset-right), 2rem);
-
   height: 100dvh;
   width: 100dvw;
   color: white;
@@ -50,6 +42,15 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  /* Ensure body extends to status bar area on iOS */
+  padding-top: max(env(safe-area-inset-top), 2rem);
+  padding-bottom: max(env(safe-area-inset-bottom), 2rem);
+  padding-left: max(env(safe-area-inset-left), 2rem);
+  padding-right: max(env(safe-area-inset-right), 2rem);
 }
 
 /* ============================================
