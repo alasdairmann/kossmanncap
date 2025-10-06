@@ -215,13 +215,51 @@ function setupEventListeners() {
   mouse = new THREE.Vector2()
   raycaster = new THREE.Raycaster()
 
+  // Desktop mouse events
   window.addEventListener('mousemove', onMouseMove)
+
+  // Mobile touch events
+  window.addEventListener('touchstart', onTouchStart, { passive: false })
+  window.addEventListener('touchmove', onTouchMove, { passive: false })
+  window.addEventListener('touchend', onTouchEnd, { passive: false })
+
   window.addEventListener('resize', onWindowResize)
 }
 
 function onMouseMove(event) {
   targetMouseX = (event.clientX / window.innerWidth) * 2 - 1
   targetMouseY = -(event.clientY / window.innerHeight) * 2 + 1
+}
+
+function onTouchStart(event) {
+  // Prevent default touch behavior to avoid scrolling conflicts
+  event.preventDefault()
+
+  if (event.touches.length > 0) {
+    const touch = event.touches[0]
+    targetMouseX = (touch.clientX / window.innerWidth) * 2 - 1
+    targetMouseY = -(touch.clientY / window.innerHeight) * 2 + 1
+  }
+}
+
+function onTouchMove(event) {
+  // Prevent default touch behavior to avoid scrolling conflicts
+  event.preventDefault()
+
+  if (event.touches.length > 0) {
+    const touch = event.touches[0]
+    targetMouseX = (touch.clientX / window.innerWidth) * 2 - 1
+    targetMouseY = -(touch.clientY / window.innerHeight) * 2 + 1
+  }
+}
+
+function onTouchEnd(event) {
+  // Prevent default touch behavior
+  event.preventDefault()
+
+  // Optionally reset to center when touch ends
+  // targetMouseX = 0
+  // targetMouseY = 0
 }
 
 function onWindowResize() {
