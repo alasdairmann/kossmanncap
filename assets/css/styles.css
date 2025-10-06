@@ -50,8 +50,6 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
-  touch-action: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* ============================================

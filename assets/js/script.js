@@ -68,6 +68,7 @@ let mouseX = 0,
   mouseY = 0
 let targetMouseX = 0,
   targetMouseY = 0
+let isTouching = false
 
 // ============================================
 // INITIALIZATION
@@ -149,6 +150,12 @@ function createRenderer() {
   // Enable pointer events on the canvas for touch interaction
   container.style.pointerEvents = 'auto'
 
+  // Ensure canvas can receive touch events
+  const canvas = renderer.domElement
+  canvas.style.touchAction = 'none'
+  canvas.style.userSelect = 'none'
+  canvas.style.webkitUserSelect = 'none'
+
   console.log('Renderer created, canvas added to DOM')
 }
 
@@ -221,14 +228,20 @@ function setupEventListeners() {
   raycaster = new THREE.Raycaster()
 
   const container = document.getElementById('three-container')
+  const canvas = renderer.domElement
 
-  // Desktop mouse events
+  // Desktop mouse events - attach to both container and canvas
   container.addEventListener('mousemove', onMouseMove)
+  canvas.addEventListener('mousemove', onMouseMove)
 
-  // Mobile touch events - attach to container to prevent page scrolling
+  // Mobile touch events - attach to both container and canvas for better coverage
   container.addEventListener('touchstart', onTouchStart, { passive: false })
   container.addEventListener('touchmove', onTouchMove, { passive: false })
   container.addEventListener('touchend', onTouchEnd, { passive: false })
+
+  canvas.addEventListener('touchstart', onTouchStart, { passive: false })
+  canvas.addEventListener('touchmove', onTouchMove, { passive: false })
+  canvas.addEventListener('touchend', onTouchEnd, { passive: false })
 
   // Window resize still needs to be on window
   window.addEventListener('resize', onWindowResize)
@@ -244,6 +257,8 @@ function onTouchStart(event) {
   event.preventDefault()
   event.stopPropagation()
 
+  isTouching = true
+
   if (event.touches.length > 0) {
     const touch = event.touches[0]
     targetMouseX = (touch.clientX / window.innerWidth) * 2 - 1
@@ -252,6 +267,9 @@ function onTouchStart(event) {
 }
 
 function onTouchMove(event) {
+  // Only process if we're actively touching
+  if (!isTouching) return
+
   // Aggressively prevent all default touch behavior including scrolling
   event.preventDefault()
   event.stopPropagation()
@@ -267,6 +285,8 @@ function onTouchEnd(event) {
   // Prevent default touch behavior
   event.preventDefault()
   event.stopPropagation()
+
+  isTouching = false
 
   // Optionally reset to center when touch ends
   // targetMouseX = 0
